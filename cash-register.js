@@ -54,7 +54,7 @@ function checkCashRegister(price, cash, cid) {
 
             output.status = "OPEN";
             output.change = returnedChange;
-            return output
+            return output;
 
         }
     }

@@ -8,7 +8,7 @@ function checkCashRegister(price, cash, cid) {
     };
 
     if (change === cidTotal) {
-        output.status = 'CLOSED';
+        output.status = "CLOSED";
         output.change = cid;
         return output;
     }
@@ -41,18 +41,18 @@ function checkCashRegister(price, cash, cid) {
                     currentCurrency.value[1] = currentCurrency.value[1].toFixed(2) - currentCurrency.decrementBy;
                     temp[1] += currentCurrency.decrementBy;
                 }
-                temp[1] ? returnedChange.push(temp) : '';
+                temp[1] ? returnedChange.push(temp) : "";
                 currentCurrency = currentCurrency.next;
             }
             if (changeNeeded > 0) {
                 {
-                    output.status = 'INSUFFICIENT_FUNDS';
+                    output.status = "INSUFFICIENT_FUNDS";
                     output.change = [];
-                    return output
+                    return output;
                 }
             }
 
-            output.status = 'OPEN';
+            output.status = "OPEN";
             output.change = returnedChange;
             return output
 

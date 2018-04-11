@@ -8,9 +8,9 @@ function checkCashRegister(price, cash, cid) {
     };
 
     if (change === cidTotal) {
-        output.status = 'CLOSED'
+        output.status = 'CLOSED';
         output.change = cid;
-        return output
+        return output;
     }
 
     class CashRegister {
@@ -21,8 +21,12 @@ function checkCashRegister(price, cash, cid) {
 
         addToHead(typeAmount) {
             const newCurrency = new AvailableCurrency(typeAmount, this.head, null);
-            if (this.head) this.head.prev = newCurrency;
-            else this.tail = newCurrency;
+            if (this.head) {
+                this.head.prev = newCurrency;
+            }
+            else {
+                this.tail = newCurrency;
+            }
             this.head = newCurrency;
         }
 
